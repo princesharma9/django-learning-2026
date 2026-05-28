@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Chai Page
+{% endblock %}
+
+{% block content %}
+
+<h1> All chai from chai app by template layout
+</h1>
+{% for chai in Chais  %}
+    <div>
+        <img src="{{chai.image.url}}" alt="">
+        <h2>{{chai.name}}</h2>
+        
+        {% comment %} <a href="{% url 'chai_detail' chai.id %}"> {% endcomment %}
+            <button >
+                {{chai.type}} - {{chai.id}}
+            </button>
+        </a>
+    </div>
+{% endfor %}
+
+
+{% endblock %}
