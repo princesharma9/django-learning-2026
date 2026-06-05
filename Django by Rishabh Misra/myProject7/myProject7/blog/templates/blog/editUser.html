@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Edit Page
+{% endblock %}
+
+{% block content %}
+    <h1>hello</h1>
+    
+    <form method = "POST">
+        {% csrf_token %}
+        <input type="text" name = 'username' placeholder = 'Username'>
+        <input type="password" name = 'password'  placeholder = 'password'>
+        <button type = 'submit'> Login </button>
+
+
+    </form>
+{% endblock  %}

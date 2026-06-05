@@ -1,0 +1,39 @@
+ {% extends "base.html" %}
+ {% block title %}
+ blog page
+ {% endblock  %}
+
+ {% block content %}
+ <h1>hello</h1>
+{% comment %} <p>{{contexts.date}}</p> {% endcomment %}
+<p>date</p>
+{% comment %} If else {% endcomment %}
+
+{% comment %} {% for data in contexts.blogs %} {% endcomment %}
+{% comment %} {% if contexts.blogs.0.is_feature %} for only 'contexts': context in view {% endcomment %}
+{% if blogs.0.is_feature %} 
+<h2>Featured Blogs:</h2>
+    <h2>  {{blogs.0.title}}</h2>
+    <h2>  {{blogs.0.author}}</h2>
+    {% else %}
+    <h2>No Featured Blogs</h2>
+
+    <h2>  {{blogs.0.title}}</h2>
+    <h2>  {{blogs.0.author}}</h2>
+     
+ {% endif %}
+{% comment %} {% endfor %} {% endcomment %}
+
+{% comment %} for loop {% endcomment %}
+<ul>
+    {% for blog in blogs%}
+    <li>{{forloop.counter}}. {{blog.title}} - {{blog.author}}</li>
+     {% endfor %}
+
+</ul>
+
+{% comment %} with  {% endcomment %}
+{% with total_blogs=blogs|length %}
+<p>Total Blogs:{{total_blogs}}</p>
+{% endwith %}
+ {% endblock  %}

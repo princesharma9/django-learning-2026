@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Home Page
+{% endblock  %}
+
+{% block content %}
+    <h1>Welcome to home page</h1>
+    {% comment %} <img src="{% static "images/logo.png" %}" alt=""> {% endcomment %}
+
+    <form method = "POST">
+        {% csrf_token %}
+        <input type="text" name = 'username' placeholder = 'Username'>
+        <input type="password" name = 'password'  placeholder = 'password'>
+        <button type = 'submit'> Login </button>
+
+
+    </form>
+
+    <button onclick = 'showAlert()'> Click Me</button>
+{% endblock  %}

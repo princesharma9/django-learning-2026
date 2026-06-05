@@ -1,0 +1,15 @@
+ {% extends "layout.html" %}
+
+ {% block title %}
+    Details Chais
+ {% endblock  %}
+ {% block content %}
+ back: <a href="{% url "all_chai" %}">Click</a>
+<h1>Chai Details page</h1>
+<h3>{{chai.name}}</h3>
+<h3>{{chai.description}}</h3>
+
+Chai Riview: <a href="{% url "chai_reviews" chai.id %}">
+   <button>Click</button>
+</a>
+ {% endblock  %}

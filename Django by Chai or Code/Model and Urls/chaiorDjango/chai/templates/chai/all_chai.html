@@ -1,0 +1,26 @@
+ {% extends "layout.html" %}
+
+ {% block ttile %}
+ All Chai
+ {% endblock  %}
+
+ {% block content %}
+ Home: <a href="{% url "home" %}">Click</a>
+ <h1>All Chai for You</h1>
+
+{% for chai in  chais %}
+<div class = 'chai-item' >
+    <img src="{{chai.image.url}}" alt="" >
+    <h2>{{chai.name}}</h2>
+    
+
+    <a href="{% url  'chai_details' chai.id %}">
+        <button>
+            {{chai.type}} - {{chai.id}}
+        </button>
+    </a>
+
+</div>
+{% endfor %}
+
+ {% endblock  %}

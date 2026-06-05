@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Review
+{% endblock  %}
+
+{% block content %}
+Back: <a href="{% url "chai_details" review.id %}">Click</a>
+<h2>Review Page</h2>
+{{review.name}}
+{% endblock  %}
