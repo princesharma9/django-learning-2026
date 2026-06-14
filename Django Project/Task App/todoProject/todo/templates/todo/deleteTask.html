@@ -1,0 +1,29 @@
+ {% extends "layout.html" %}
+{% block title %}
+    Delete Task
+{% endblock %}
+{% block content %}
+    
+
+<div class="container">
+
+    <h1>Delete Tasks</h1>
+ 
+
+    <p>Are you sure you want to delete:</p>
+
+    <h3>{{ deleteTask.task }}</h3>
+    <form action="{% url "todo:deleteTask"  deleteTask.id %}" method = "post">
+        {% csrf_token %}
+        <button type="submit">Delete Conform</button>
+        
+    </form>
+
+    <a href="{% url "todo:task_list" %}"> <button>Cencle</button></a>
+
+     
+    
+</div>
+
+
+{% endblock %}

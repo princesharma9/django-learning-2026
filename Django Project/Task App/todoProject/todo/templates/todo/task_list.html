@@ -1,0 +1,43 @@
+ {% extends "layout.html" %}
+{% block title %}
+    Task List
+{% endblock %}
+{% block content %}
+    
+
+<div class="container">
+
+    <h1>My Tasks</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="task" placeholder="Enter your task here" required>
+
+        <button type="submit">Add Task</button>
+    </form>
+    
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.task }}
+                 <div class = 'flex'>
+                    <a href="{% url "todo:editTask"  task.id %}">
+                        <button>Edit</button>
+                    </a>
+                    <a href="{% url "todo:deleteTask" task.id%}">
+                        <button>Delete</button>
+                    </a>
+                 </div>
+            </li>
+        {% empty %}
+            <div class="empty">
+                No tasks available.
+            </div>
+        {% endfor %}
+    </ul>
+
+</div>
+
+
+{% endblock %}

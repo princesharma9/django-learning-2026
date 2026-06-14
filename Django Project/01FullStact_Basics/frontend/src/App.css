@@ -1,0 +1,37 @@
+.body{
+  background-color: #212121;
+  /* color: #fff; */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  gap: 30px;
+  /* border: 10px solid; */
+}
+
+.student{
+ 
+   
+  border-radius: 10px;
+   
+  width: 200px;
+  
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: brown;
+  color: #000;
+
+}
+
+.student button{
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 10px;
+  font-weight: bold;
+  font-family: monospace;
+}

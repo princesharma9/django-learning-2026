@@ -1,0 +1,12 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Login{% endblock  %}
+
+{% block content %}
+    {% comment %} <h2>Register</h2> {% endcomment %}
+    <h2>Welcome to your dashboard, {{ request.user.username }}!</h2>
+    <p>Email: {{ request.user.email }}</p>
+    {% comment %} <p>First Name: {{ request.user.first_name }}</p> {% endcomment %}
+     
+     
+{% endblock  %}
